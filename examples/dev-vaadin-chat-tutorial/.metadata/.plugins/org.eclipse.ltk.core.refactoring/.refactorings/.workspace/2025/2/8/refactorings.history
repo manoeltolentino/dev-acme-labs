@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;application&apos; to &apos;Vaadin-chat&apos;" description="Rename resource &apos;application&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/application" name="Vaadin-chat" stamp="1739714437832" updateReferences="true"/>
+</session>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.vaadin.flow.router.Route"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.router.HasUrlParameter"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.messages.MessageInput"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.page.Push"/>
+    <fullyQualifiedTypeName name="java.time.Clock"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
+    <fullyQualifiedTypeName name="com.example.application.Application"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.messages.MessageListItem"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.AttachEvent"/>
+    <fullyQualifiedTypeName name="com.example.application.chat.ChatService"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.example.application.chat.Message"/>
+    <fullyQualifiedTypeName name="reactor.core.Disposable"/>
+</qualifiedTypeNameHistroy>

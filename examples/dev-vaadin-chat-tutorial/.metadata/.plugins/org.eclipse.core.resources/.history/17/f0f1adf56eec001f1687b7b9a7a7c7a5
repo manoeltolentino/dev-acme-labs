@@ -1,0 +1,21 @@
+package com.example.application.views.channel;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.HasUrlParameter;
+import com.vaadin.flow.router.Route;
+
+@Route(value = "channel")
+public class ChannelView extends VerticalLayout implements HasUrlParameter<String> {
+	
+    private final ChatService chatService;
+    private final MessageList messageList;
+
+    public ChannelView(ChatService chatService) { 
+        this.chatService = chatService;
+    }
+
+    @Override
+    public void setParameter(BeforeEvent event, String channelId) { 
+    }
+
+}

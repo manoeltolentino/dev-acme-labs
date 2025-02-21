@@ -1,0 +1,15 @@
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\Application.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\Channel.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\ChatService.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\InvalidChannelException.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\Message.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\package-info.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\spi\ChannelRepository.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\spi\MessageRepository.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\spi\NewChannel.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\spi\NewMessage.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\chat\spi\package-info.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\inmemorystorage\InMemoryChannelRepository.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\inmemorystorage\InMemoryMessageRepository.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\inmemorystorage\package-info.java
+D:\Files\Dev\Github\dev-vaadin-chat-tutotial\Vaadin-chat\src\main\java\com\example\application\views\channel\ChannelView.java

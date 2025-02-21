@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/src/main/frontend/generated/jar-resources",
+  "staticOutput": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "D:\\Files\\Dev\\Github\\dev-vaadin-chat-tutotial\\Vaadin-chat\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "D:\\Files\\Dev\\Github\\dev-vaadin-chat-tutotial\\Vaadin-chat\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/target/dev-bundle/config",
+  "jarResourcesFolder": "D:/Files/Dev/Github/dev-vaadin-chat-tutotial/Vaadin-chat/src/main/frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "D:\\Files\\Dev\\Github\\dev-vaadin-chat-tutotial\\Vaadin-chat\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

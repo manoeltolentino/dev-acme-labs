@@ -1,0 +1,7 @@
+package com.example.application.views.channel;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+public class ChannelView extends VerticalLayout {
+
+}
