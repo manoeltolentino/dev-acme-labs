@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity(name = "TB_USER")
 public class User {
@@ -23,6 +24,17 @@ public class User {
 	private String login;
 	
 	private String name;
+	
+	public Set<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(Set<Contact> contacts) {
+		this.contacts = contacts;
+	}
+
+	@OneToMany(mappedBy = "user")
+	private Set<Contact> contacts;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(

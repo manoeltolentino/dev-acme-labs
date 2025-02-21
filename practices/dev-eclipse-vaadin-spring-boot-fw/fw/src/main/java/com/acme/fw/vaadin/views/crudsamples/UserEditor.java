@@ -1,4 +1,4 @@
-package com.acme.fw.vaadin.views.crudsample;
+package com.acme.fw.vaadin.views.crudsamples;
 
 import com.acme.fw.spring.model.User;
 import com.vaadin.flow.component.Composite;
@@ -15,6 +15,9 @@ import com.vaadin.flow.data.binder.Binder;
 
 public class UserEditor extends Composite<VerticalLayout> {
 	
+	private User user;
+	private final Binder<User> binder = new BeanValidationBinder<>(User.class);
+	
 	public interface SaveListener{
 		void onSave(User user);
 	}
@@ -27,17 +30,57 @@ public class UserEditor extends Composite<VerticalLayout> {
 		void onCancel();
 	}
 	
-	private User user;
-	
 	private SaveListener saveListener;
 	private DeleteListener deleteListener;
 	private CancelListener cancelListener;
 	
-	private final Binder<User> binder = new BeanValidationBinder<>(User.class);
+	public UserEditor() {
+		var login = new TextField("Login");
+		var name = new TextField("Nome");
+		
+		var save = new Button("Salvar", VaadinIcon.CHECK.create());
+		var cancel = new Button("Cancelar");
+		var delete = new Button("Delete", VaadinIcon.TRASH.create());
+		
+		binder.forField(login).bind("login");
+		binder.forField(name).bind("name");
+		
+		save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+		save.addClickListener(e -> save());
+		save.addClickShortcut(Key.ENTER);
+		
+		delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
+		delete.addClickListener(e -> deleteListener.onDelete(user));
+		
+		cancel.addClickListener(e -> cancelListener.onCancel());
+		
+		getContent().add(login, name, new HorizontalLayout(save, cancel, delete));
+		
+	}
+	
+	void save() {
+		
+		var updated = new User();
+		updated.setId(user.getId());
+		
+		if (binder.writeBeanIfValid(updated)) {
+			saveListener.onSave(updated);
+		}
+		
+	}
+	
 	
 	public void setUser(User user) {
 		this.user = user;
 		binder.readBean(user);
+	}
+
+	public SaveListener getSaveListener() {
+		return saveListener;
+	}
+
+	public void setSaveListener(SaveListener saveListener) {
+		this.saveListener = saveListener;
 	}
 
 	public DeleteListener getDeleteListener() {
@@ -65,29 +108,4 @@ public class UserEditor extends Composite<VerticalLayout> {
 	}
 	
 	
-	public UserEditor() {
-		var id = new Text("id");
-		var login = new TextField("Login");
-		var name = new TextField("Nome");
-		
-		var save = new Button("Salvar", VaadinIcon.CHECK.create());
-		var cancel = new Button("Cancelar");
-		var delete = new Button("Delete", VaadinIcon.TRASH.create());
-		
-//		binder.forField(id).bind("id");
-		binder.forField(login).bind("login");
-		binder.forField(name).bind("name");
-		
-		save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-		save.addClickListener(e -> saveListener.onSave(user));
-		save.addClickShortcut(Key.ENTER);
-		
-		delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
-		delete.addClickListener(e -> deleteListener.onDelete(user));
-		
-		cancel.addClickListener(e -> cancelListener.onCancel());
-		
-		getContent().add(id, login, new HorizontalLayout(save, cancel, delete));
-		
-	}
 }

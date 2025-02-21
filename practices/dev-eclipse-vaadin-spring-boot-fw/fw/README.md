@@ -49,3 +49,8 @@ java -jar target/my-app-1.0-SNAPSHOT.jar
 - Find add-ons at [vaadin.com/directory](https://vaadin.com/directory).
 - Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Forum](https://vaadin.com/forum).
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin).
+
+### Fontes
+
+https://www.baeldung.com/spring-boot-vaadin
+https://medium.com/javarevisited/accessing-spring-bean-inside-a-pojo-c7a0d3da3ef8

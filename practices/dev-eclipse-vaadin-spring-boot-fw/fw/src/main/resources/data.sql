@@ -98,3 +98,14 @@ insert into sample_person(version, id,first_name,last_name,email,phone,date_of_b
 insert into sample_person(version, id,first_name,last_name,email,phone,date_of_birth,occupation,role,important) values (1, 98,'Earl','Giovannoni','earl.giovannoni@lojet.ge','(433) 862-3076','1989-02-24','Auto Service Station Attendant','Manager',false)
 insert into sample_person(version, id,first_name,last_name,email,phone,date_of_birth,occupation,role,important) values (1, 99,'Helen','Zanieri','helen.zanieri@ukve.tn','(619) 506-4452','1970-07-09','Healthcare Social Worker','External',false)
 insert into sample_person(version, id,first_name,last_name,email,phone,date_of_birth,occupation,role,important) values (1, 100,'Agnes','Toccafondi','agnes.toccafondi@viipo.ae','(616) 688-6883','1972-07-28','Comedian','External',false)
+
+
+insert into tb_user(login, name) values ('mtolentino', 'Manoel Tolentino')
+insert into tb_user(login, name) values ('acme', 'Pernalonga')
+
+insert into tb_profile(name) values ('Administrator')
+insert into tb_profile(name) values ('User')
+
+insert into tb_user_profile(id_user, id_profile) values (1, 1)
+insert into tb_user_profile(id_user, id_profile) values (1, 2)
+insert into tb_user_profile(id_user, id_profile) values (2, 2)
