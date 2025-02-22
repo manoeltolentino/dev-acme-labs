@@ -1,11 +1,16 @@
 package com.acme.fw.spring.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.acme.fw.spring.model.User;
 import com.acme.fw.spring.repository.UserRepository;
+import com.acme.fw.vaadin.data.SamplePerson;
 
 
 @Service
@@ -30,6 +35,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+
+    public Optional<User> get(Long id) {
+        return this.userRepository.findById(id);
+    }	
 
 	@Override
 	public User createEntity(User user) {
@@ -48,5 +58,17 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 
 	}
+	
+    public User save(User entity) {
+        return this.userRepository.save(entity);
+    }	
+	
+    public Page<User> list(Pageable pageable) {
+        return this.userRepository.findAll(pageable);
+    }
+
+    public Page<User> list(Pageable pageable, Specification<User> filter) {
+        return this.userRepository.findAll(filter, pageable);
+    }	
 
 }

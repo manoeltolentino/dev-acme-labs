@@ -6,6 +6,7 @@ import com.vaadin.flow.theme.Theme;
 import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer;
 import org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,8 @@ import org.springframework.context.annotation.Bean;
  * and some desktop browsers.
  *
  */
-@SpringBootApplication
+//@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })  // exclui configuração default
 @Theme(value = "my-app")
 public class Application implements AppShellConfigurator {
 
