@@ -1,4 +1,4 @@
-package com.acme.fw.vaadin.views.crudsamples;
+package com.acme.fw.vaadin.views.employeecrud;
 
 
 import com.acme.fw.vaadin.data.Employee;

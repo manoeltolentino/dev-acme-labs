@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.acme.fw.spring.model.User;
 import com.acme.fw.spring.repository.UserRepository;
-import com.acme.fw.vaadin.data.SamplePerson;
 
 
 @Service

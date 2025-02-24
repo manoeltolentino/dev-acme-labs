@@ -1,4 +1,4 @@
-package com.acme.fw.vaadin.views.crudsamples;
+package com.acme.fw.vaadin.views.employeecrud;
 
 import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
@@ -17,7 +17,7 @@ import com.vaadin.flow.router.Route;
 
 @PageTitle("Employees")
 @Route("employees")
-@Menu(order = 7, icon = LineAwesomeIconUrl.USER)
+@Menu(order = 2, icon = LineAwesomeIconUrl.USER)
 public class EmployeesView extends VerticalLayout {
 
     private final EmployeeRepository employeeRepository;
