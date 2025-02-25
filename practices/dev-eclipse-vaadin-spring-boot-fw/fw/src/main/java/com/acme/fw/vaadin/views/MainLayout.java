@@ -14,6 +14,8 @@ import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.Layout;
+import com.vaadin.flow.router.NotFoundException;
+import com.vaadin.flow.server.auth.AccessDeniedErrorRouter;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.server.menu.MenuConfiguration;
 import com.vaadin.flow.server.menu.MenuEntry;
@@ -27,6 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Layout
 @AnonymousAllowed
+@AccessDeniedErrorRouter(rerouteToError = NotFoundException.class)
 public class MainLayout extends AppLayout {
 
     private H1 viewTitle;
