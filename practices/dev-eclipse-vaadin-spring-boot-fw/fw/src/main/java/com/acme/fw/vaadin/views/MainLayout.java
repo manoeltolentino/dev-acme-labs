@@ -1,12 +1,15 @@
 package com.acme.fw.vaadin.views;
 
+import com.acme.fw.spring.security.SecurityService;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Header;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.SvgIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
@@ -17,6 +20,8 @@ import com.vaadin.flow.server.menu.MenuEntry;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * The main view is a top-level placeholder for other views.
  */
@@ -25,8 +30,13 @@ import java.util.List;
 public class MainLayout extends AppLayout {
 
     private H1 viewTitle;
+    
+    private SecurityService securityService;
 
-    public MainLayout() {
+    public MainLayout(@Autowired SecurityService securityService) {
+    	
+    	this.securityService = securityService;
+    	
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
@@ -38,8 +48,19 @@ public class MainLayout extends AppLayout {
 
         viewTitle = new H1();
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
+        
+        HorizontalLayout header;
+        
+    	if (securityService.getAuthenticateUser() != null) {
+    		Button logout = new Button("Logout", click -> securityService.logout());
+    		header = new HorizontalLayout(logout);
+    	}
+    	else {
+    		header = new HorizontalLayout();
+    	}
+        
 
-        addToNavbar(true, toggle, viewTitle);
+        addToNavbar(true, toggle, viewTitle, header);
     }
 
     private void addDrawerContent() {

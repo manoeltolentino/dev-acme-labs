@@ -54,3 +54,4 @@ java -jar target/my-app-1.0-SNAPSHOT.jar
 
 https://www.baeldung.com/spring-boot-vaadin
 https://medium.com/javarevisited/accessing-spring-bean-inside-a-pojo-c7a0d3da3ef8
+https://vaadin.com/docs/latest/flow/security/enabling-security
