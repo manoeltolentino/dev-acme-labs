@@ -4,6 +4,7 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
 import com.acme.fw.vaadin.data.Employee;
 import com.acme.fw.vaadin.data.EmployeeRepository;
+import com.acme.fw.vaadin.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -15,9 +16,12 @@ import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import jakarta.annotation.security.PermitAll;
+
 @PageTitle("Employees")
-@Route("employees")
+@Route(value = "employees", layout = MainLayout.class)
 @Menu(order = 2, icon = LineAwesomeIconUrl.USER)
+@PermitAll
 public class EmployeesView extends VerticalLayout {
 
     private final EmployeeRepository employeeRepository;

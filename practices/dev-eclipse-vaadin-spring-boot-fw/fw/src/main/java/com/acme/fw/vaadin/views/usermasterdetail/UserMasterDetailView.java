@@ -7,6 +7,7 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
 import com.acme.fw.spring.model.User;
 import com.acme.fw.spring.service.UserService;
+import com.acme.fw.vaadin.views.MainLayout;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -34,7 +35,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 
 @PageTitle("Usuários")
-@Route("usuarios/:userID?/:action?(edit)")
+@Route(value = "usuarios/:userID?/:action?(edit)", layout = MainLayout.class)
 @Menu(order = 1, icon = LineAwesomeIconUrl.COLUMNS_SOLID)
 @Uses(Icon.class)
 public class UserMasterDetailView extends Div implements BeforeEnterObserver {
