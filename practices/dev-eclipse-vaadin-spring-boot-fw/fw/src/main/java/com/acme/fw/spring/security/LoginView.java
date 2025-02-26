@@ -25,16 +25,19 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver{
 		
 		loginForm.setAction("login");
 		
-		add(new H1("Test application"), loginForm);
+		add(new H1("Spring Vaadin Framework"), loginForm);
+		
 	}
 	
 	public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
+		
 		if (beforeEnterEvent.getLocation()
 				.getQueryParameters()
 				.getParameters()
 				.containsKey("error")) {
 			loginForm.setError(true);
 		}
+		
 	}
 
 }
