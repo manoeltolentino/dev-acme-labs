@@ -57,7 +57,7 @@ public class MainLayout extends AppLayout {
         
         Button logout = null;
         
-    	if (securityService.getAuthenticateUser() != null) {
+    	if (securityService.getAuthenticatedUser() != null) {
     		logout = new Button("Logout", click -> securityService.logout());
     		logout.addClassNames(LumoUtility.AlignSelf.END);
     	}
