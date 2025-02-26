@@ -34,10 +34,13 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 
+import jakarta.annotation.security.PermitAll;
+
 @PageTitle("Usuários")
 @Route(value = "usuarios/:userID?/:action?(edit)", layout = MainLayout.class)
 @Menu(order = 1, icon = LineAwesomeIconUrl.COLUMNS_SOLID)
 @Uses(Icon.class)
+@PermitAll
 public class UserMasterDetailView extends Div implements BeforeEnterObserver {
 
     private final String USER_ID = "userID";

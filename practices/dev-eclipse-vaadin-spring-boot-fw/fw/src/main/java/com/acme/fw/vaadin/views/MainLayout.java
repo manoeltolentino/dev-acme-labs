@@ -4,13 +4,17 @@ import com.acme.fw.spring.security.SecurityService;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.grid.dataview.GridLazyDataView;
 import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Header;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.SvgIcon;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.Layout;
@@ -20,6 +24,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.server.menu.MenuConfiguration;
 import com.vaadin.flow.server.menu.MenuEntry;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,18 +57,23 @@ public class MainLayout extends AppLayout {
         viewTitle = new H1();
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         
-        HorizontalLayout header;
+        Gridlay header = new HorizontalLayout();
+        header.setSizeFull();
+        
+        Button logout = null;
         
     	if (securityService.getAuthenticateUser() != null) {
-    		Button logout = new Button("Logout", click -> securityService.logout());
-    		header = new HorizontalLayout(logout);
-    	}
-    	else {
-    		header = new HorizontalLayout();
+    		logout = new Button("Logout", click -> securityService.logout());
+    		logout.addClassNames(LumoUtility.AlignSelf.END);
     	}
         
+//    	if (logout != null) {
+//    		header.setAlignSelf(FlexComponent.Alignment.END, logout);
+//    	}
+    	
+    	header.add(toggle, viewTitle, logout);
 
-        addToNavbar(true, toggle, viewTitle, header);
+        addToNavbar(true, header);
     }
 
     private void addDrawerContent() {
