@@ -53,8 +53,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteEntity(Long id) {
-		// TODO Auto-generated method stub
+	public void deleteEntity(User user) {
+		
+		this.userRepository.delete(user);
 
 	}
 	

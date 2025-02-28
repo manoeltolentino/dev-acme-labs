@@ -21,7 +21,7 @@ public interface UserService {
 	
 	public User updateEntity(Long id, User user);
 	
-	public void deleteEntity(Long id);
+	public void deleteEntity(User user);
 	
     public User save(User entity);
 	

@@ -21,7 +21,6 @@ public class RegistrationForm extends FormLayout{
 	private TextField login;
 	private PasswordField password;
 	private PasswordField confirmPassword;
-	private Checkbox active;
 	
 	private Span errorMessageField;
 	private Button submitButton;
@@ -30,9 +29,6 @@ public class RegistrationForm extends FormLayout{
 		title = new H3("Registro de usuários");
 		name = new TextField("Nome");
 		email = new EmailField("Email");
-		
-		active = new Checkbox("Usuário ativo");
-		active.getStyle().set("margin-top", "10px");
 		
 		login = new TextField("Login");
 		
@@ -46,7 +42,7 @@ public class RegistrationForm extends FormLayout{
 		submitButton = new Button("Ok");
 		submitButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 		
-		add(title, name, email, login, password, confirmPassword, active, errorMessageField, submitButton);
+		add(title, name, email, login, password, confirmPassword, errorMessageField, submitButton);
 		setMaxWidth("500px");
 		
        // Allow the form layout to be responsive.
@@ -61,8 +57,9 @@ public class RegistrationForm extends FormLayout{
 		setColspan(title, 2);
 		setColspan(name, 2);
 		setColspan(email, 2);
+		setColspan(login, 2);
 		setColspan(errorMessageField, 2);
-		setColspan(submitButton, 2);
+		setColspan(submitButton, 2); 
 		
 	}
 	

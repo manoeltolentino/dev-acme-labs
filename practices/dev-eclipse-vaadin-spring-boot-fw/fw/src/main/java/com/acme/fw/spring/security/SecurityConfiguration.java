@@ -22,10 +22,9 @@ public class SecurityConfiguration extends VaadinWebSecurity {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(auth -> 
-        	auth.requestMatchers(
-        			AntPathRequestMatcher.antMatcher(HttpMethod.GET, "/images/*.png")).permitAll());
+        	auth.requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET, "/images/*.png")).permitAll());
 
-        super.configure(http); 
+        super.configure(http);
 
         setLoginView(http, LoginView.class); 
     }
@@ -52,7 +51,6 @@ public class SecurityConfiguration extends VaadinWebSecurity {
         		.build();
         
         return new InMemoryUserDetailsManager(user, admin);
-
         
     }
 

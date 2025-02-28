@@ -3,10 +3,11 @@ package com.acme.fw.spring.utils;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SpringContext implements ApplicationContextAware{
+public class SpringUtils implements ApplicationContextAware{
 	
 	private static ApplicationContext applicationContext;
 	
@@ -20,7 +21,23 @@ public class SpringContext implements ApplicationContextAware{
 	}
 	
 	private static synchronized void setContext(ApplicationContext applicationContext) {
-		SpringContext.applicationContext = applicationContext;
+		SpringUtils.applicationContext = applicationContext;
 	}
+	
+	public static String encodeBCryptPassword(String rawPassword) {
+
+		BCryptPasswordEncoder encoder =  new BCryptPasswordEncoder();
+		
+		return encoder.encode(rawPassword);
+		
+	}
+	
+	public static boolean matchBCryptPassword(String rawPassword, String encodedPassword) {
+		
+		BCryptPasswordEncoder encoder =  new BCryptPasswordEncoder();
+		
+		return encoder.matches(rawPassword, encodedPassword);
+				
+	}	
 
 }

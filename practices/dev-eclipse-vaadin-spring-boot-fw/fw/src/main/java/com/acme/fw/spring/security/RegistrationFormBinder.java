@@ -1,12 +1,11 @@
 package com.acme.fw.spring.security;
+import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.acme.fw.spring.controller.UserController;
 import com.acme.fw.spring.model.User;
 import com.acme.fw.spring.service.UserService;
-import com.acme.fw.spring.utils.SpringContext;
+import com.acme.fw.spring.utils.SpringUtils;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
@@ -18,14 +17,14 @@ public class RegistrationFormBinder {
 	
 	private RegistrationForm registrationForm;
 	
-	@Autowired
-	private UserService userService;
+	private final UserService userService;
 	
 	//Flag for disabling first run for password validation
 	private boolean enablePasswordValidation;
 	
-	public RegistrationFormBinder(RegistrationForm registrationForm) {
+	public RegistrationFormBinder(RegistrationForm registrationForm, UserService userService) {
 		this.registrationForm = registrationForm;
+		this.userService = userService;
 	}
 	
 	//Method to add the data binding and validation logics to the registration form
@@ -56,11 +55,12 @@ public class RegistrationFormBinder {
 				
 				binder.writeBean(user);
 				
-				UserService userService2 = SpringContext.getBean(UserService.class);
+				user.setPassword(SpringUtils.encodeBCryptPassword(user.getPassword()));
+				user.setCreation(new Date());
+				user.setLastAccess(new Date());
+				user.setConfirmed(false);
 				
-				user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-				
-				userService2.createEntity(user);
+				userService.createEntity(user);
 				
 				showSuccess(user);
 				

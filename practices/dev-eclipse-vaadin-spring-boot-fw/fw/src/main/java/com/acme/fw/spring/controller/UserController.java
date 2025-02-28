@@ -57,7 +57,11 @@ public class UserController {
 	@DeleteMapping("/{id}")
 	public void deleteEntity(@PathVariable Long id) {
 		
-		this.userService.deleteEntity(id);
+		User user = this.userService.get(id).orElse(null);
+		
+		if (user != null) {
+			this.userService.deleteEntity(user);
+		}
 		
 	}
 	

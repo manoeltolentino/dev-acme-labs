@@ -1,5 +1,6 @@
 package com.acme.fw.spring.model;
 
+import java.util.Date;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -35,6 +36,23 @@ public class User {
 	
 	private boolean active;
 	
+	private boolean confirmed;
+
+	private Date creation;
+	
+	private Date lastAccess;
+	
+	@OneToMany(mappedBy = "user")
+	private Set<Contact> contacts;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(
+			name = "TB_USER_PROFILE",
+			joinColumns = @JoinColumn(name = "ID_USER"),
+			inverseJoinColumns = @JoinColumn(name = "ID_PROFILE")
+			)
+	Set<Profile> profiles;	
+	
 	public boolean isActive() {
 		return active;
 	}
@@ -50,17 +68,6 @@ public class User {
 	public void setContacts(Set<Contact> contacts) {
 		this.contacts = contacts;
 	}
-
-	@OneToMany(mappedBy = "user")
-	private Set<Contact> contacts;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(
-			name = "TB_USER_PROFILE",
-			joinColumns = @JoinColumn(name = "ID_USER"),
-			inverseJoinColumns = @JoinColumn(name = "ID_PROFILE")
-			)
-	Set<Profile> profiles;
 	
 	public User() {
 		super();
@@ -112,6 +119,30 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public boolean isConfirmed() {
+		return confirmed;
+	}
+
+	public void setConfirmed(boolean confirmed) {
+		this.confirmed = confirmed;
+	}
+
+	public Date getCreation() {
+		return creation;
+	}
+
+	public void setCreation(Date creation) {
+		this.creation = creation;
+	}
+
+	public Date getLastAccess() {
+		return lastAccess;
+	}
+
+	public void setLastAccess(Date lastAccess) {
+		this.lastAccess = lastAccess;
 	}
 
 	@Override
