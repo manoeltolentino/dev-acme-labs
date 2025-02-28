@@ -41,13 +41,13 @@ public class SecurityConfiguration extends VaadinWebSecurity {
     	
         UserDetails user = User.builder()
         		.username("user")
-        		.password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
+        		.password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW") //password: password
         		.roles("USER")
         		.build();
 
         UserDetails admin = User.builder()
         		.username("admin")
-        		.password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
+        		.password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW") //password: password
         		.roles("USER", "ADMIN")
         		.build();
         

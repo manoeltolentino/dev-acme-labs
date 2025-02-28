@@ -15,7 +15,9 @@ import com.vaadin.flow.theme.Theme;
  *
  */
 //@SpringBootApplication
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })  // exclui configuração default
+@SpringBootApplication(scanBasePackages = {"com.acme.fw"},
+	exclude = { SecurityAutoConfiguration.class })  // exclui configuração default
+
 @Theme(value = "my-app")
 public class Application implements AppShellConfigurator {
 

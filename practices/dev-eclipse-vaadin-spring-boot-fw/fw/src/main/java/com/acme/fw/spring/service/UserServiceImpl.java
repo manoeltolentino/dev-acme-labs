@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.acme.fw.spring.model.User;
 import com.acme.fw.spring.repository.UserRepository;
 
-
 @Service
 public class UserServiceImpl implements UserService {
 	
@@ -42,8 +41,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User createEntity(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.userRepository.save(user);
+		
 	}
 
 	@Override
