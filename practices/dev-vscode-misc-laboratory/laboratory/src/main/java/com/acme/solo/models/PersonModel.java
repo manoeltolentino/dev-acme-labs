@@ -1,4 +1,4 @@
-package com.acme.models;
+package com.acme.solo.models;
 
 public class PersonModel {
     

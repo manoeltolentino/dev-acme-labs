@@ -1,13 +1,11 @@
-package com.acme.modules;
+package com.acme.solo.modules;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.apache.commons.beanutils.PropertyUtils;
 
-import com.acme.models.PersonModel;
+import com.acme.solo.models.PersonModel;
 
 public class Reflection {
 
